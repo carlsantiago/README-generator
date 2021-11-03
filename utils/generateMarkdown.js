@@ -15,7 +15,7 @@ const generateMarkdown = ({ username, email, project, desciption, licence, depen
       licenceImg = "https://img.shields.io/badge/Licence-BSD%203-brightgreen"
       break;
     case 'None':
-    licenceImg = ""
+    licenceImg = "no"
     break;
   }
 
@@ -47,7 +47,6 @@ return `
   
   \`\`\`
   ${dependencies}
-
   \`\`\`
   
   ## Usage
