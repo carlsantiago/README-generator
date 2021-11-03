@@ -1,45 +1,37 @@
-# Title
+# Week 9 - University of Adelaide Coding Boot Camp
 
-![Github licence]()
+## Node.js - Professional README Generator
 
-## Desciption
+<br/>
 
-undefined
+## Tasks includes
 
-## Table of Content
+- [x] To create a command-line app that dynamically generates a professional README.md from a user's input
 
-- [Installation](#Installation)
+- [x] To display user's project title as the title of the README
 
-- [Usage](#Usage)
+- [x] To add user's project description, installation instructions, usage information, contribution guidelines and test instructions.
 
-- [Licence](#Licence)
+- [x] To ask user to choose from a list of licences and create a badge of the licence for the README
 
-- [Contributing](#Contributing)
+- [x] To have a questions section with instructions on how to reach the user
 
-- [Test](#Tests)
+- [x] To have working links in the Table of Contents
 
-- [Questions](#Questions)
+<hr/>
 
-## Installation
+## Sample of the app
 
-To install necessary dependecies, run the following command:
 
-npm i
+![Sample]()
 
-## Usage
+<br/>
 
-nothing
+<hr/>
 
-## Licence
+## View the demo here
 
-This project is licenced under the GPL 3.0 licence.
+---
 
-## Contributing
-
-email me
-
-## Tests
-
-npm tests
-
-## Contact me at carlsantiago @ GitHub, carlsantiago@yahoo.coim.au ,
+© Carl Santiago\
+📧 4518gg@gmail.com
