@@ -57,7 +57,8 @@ const questions = [
 inquirer
     .prompt(questions)
     .then(function(data){
-        fs.writeFile("README.md", generateREADME(data), function(err){
+
+        fs.writeFile("./output/README.md", generateREADME(data), function(err){
             if (err){
                 throw err;
             };

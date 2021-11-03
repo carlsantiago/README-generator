@@ -1,6 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+
+
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -11,10 +12,30 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
-const generateMarkdown = ({ github, email, project, desciption, licence, dependencies, test, usage, contact }) =>
- `
+const generateMarkdown = ({ github, email, project, desciption, licence, dependencies, test, usage, contact }) => {
+
+  var licenceImg = "";
+  switch (licence) {
+    case 'MIT':
+      licenceImg = "https://img.shields.io/badge/Licence-MIT-brightgreen"
+      break;
+    case 'APACHE 2.0':
+      licenceImg = "https://img.shields.io/badge/Licence-APACHE%202.0-brightgreen"
+      break;
+    case 'GPL 3.0':
+      licenceImg = "https://img.shields.io/badge/Licence-GPL%203.0-brightgreen"
+      break;
+    case 'BSD 3':
+      licenceImg = "https://img.shields.io/badge/Licence-BSD%203-brightgreen"
+      break;
+    case 'None':
+    licenceImg = ""
+    break;
+  }
+
+return `
   # ${project}
-  ![Github licence]()
+  ![Github licence](${licenceImg})
   
   ## Desciption
   
@@ -22,17 +43,17 @@ const generateMarkdown = ({ github, email, project, desciption, licence, depende
   
   ## Table of Content
   
-  * [Installation] (#installation)
+  * [Installation](#Installation)
   
-  * [Usage] (#usage)
+  * [Usage](#Usage)
   
-  * [Licence] (#licence)
+  * [Licence](#Licence)
   
-  * [Contributing] (#contributing)
+  * [Contributing](#Contributing)
   
-  *[Test] (#tests)
+  *[Test](#tests)
   
-  *[Questions] (#questions)
+  *[Questions](#Questions)
   
   ## Installation
   
@@ -60,7 +81,6 @@ const generateMarkdown = ({ github, email, project, desciption, licence, depende
   
   ## Contact me at ${github} @ GitHub, ${email} , 
   `;
-
+}
 
 module.exports = generateMarkdown;
-
