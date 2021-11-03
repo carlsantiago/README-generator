@@ -1,20 +1,6 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+const generateMarkdown = ({ username, email, project, desciption, licence, dependencies, test, usage, contact },github) => {
 
-
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
-const generateMarkdown = ({ github, email, project, desciption, licence, dependencies, test, usage, contact }) => {
-
-  var licenceImg = "";
+  let licenceImg = "";
   switch (licence) {
     case 'MIT':
       licenceImg = "https://img.shields.io/badge/Licence-MIT-brightgreen"
@@ -43,25 +29,26 @@ return `
   
   ## Table of Content
   
-  * [Installation](#Installation)
+  * [Installation](#installation)
   
-  * [Usage](#Usage)
+  * [Usage](#usage)
   
-  * [Licence](#Licence)
+  * [Licence](#licence)
   
-  * [Contributing](#Contributing)
+  * [Contributing](#contributing)
   
-  *[Test](#tests)
+  * [Test](#tests)
   
-  *[Questions](#Questions)
+  * [Questions](#questions)
   
   ## Installation
   
   To install necessary dependecies, run the following command: 
   
-  
+  \`\`\`
   ${dependencies}
-  
+
+  \`\`\`
   
   ## Usage
   
@@ -76,10 +63,19 @@ return `
   ${contact}
   
   ## Tests
-  
+  \`\`\`
   ${test}
+  \`\`\`
+  ## Questions
   
-  ## Contact me at ${github} @ GitHub, ${email} , 
+  - Email me at ${email}
+  - Github https://www.github.com/${username}
+
+---
+© ${github.name} 
+--
+<img src="https://avatars.githubusercontent.com/${username}" alt="drawing" height="200" width="200"/>
+
   `;
 }
 

@@ -1,14 +1,13 @@
-// TODO: Include packages needed for this application
 const inquirer = require ('inquirer');
 const fs = require ('fs');
-const generateREADME = require('./utils/generateMarkdown')
+const axios = require('axios');
+const generateREADME = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
 
 const questions = [
     {
         type: 'input',
-        name: 'github',
+        name: 'username',
         message: 'What is your GitHub username?',
     },
     {
@@ -58,27 +57,21 @@ inquirer
     .prompt(questions)
     .then(function(data){
 
-        fs.writeFile("./output/README.md", generateREADME(data), function(err){
+        const profileUrl = `https://api.github.com/users/${data.username}`;
+
+        axios.get(profileUrl).then(function(result){
+
+            const github = {
+                githubImage: result.data.avatar_url,
+                profile: result.data.html_url,
+                name: result.data.name
+            };
+     
+            console.log("README has been generated!")
+        fs.writeFile("./output/README.md", generateREADME(data,github), function(err){
             if (err){
                 throw err;
-            };
+              };
+          });
         });
     });
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-
-
-
-// TODO: Create a function to initialize app
-
-// const init = () => {
-//     promptUser()
-//     .then((data) => console.log(typeof data.github))
-//     .then((data) => fs.writeFileSync('index.html', generateREADME(data)))
-//     .catch((err) => console.error(err));
-// }
-// function init() {}
-
-// Function call to initialize app
-// init();
